@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses">
+  <DataContextMoniker Name="/DataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="47a7aafe-d0e1-4385-b351-7e3dfdc75dd8" absoluteBounds="4.375, 2, 4.125, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClassesDataContext/camers_operzal_general" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fe872ab-005c-4aff-ac96-d4cd0bb01cf4" absoluteBounds="4.3900000000000006, 2.46, 4.0950000000000006, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="634e96b0-c116-420e-ab2c-50eca9a8cdee" absoluteBounds="1.375, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesDataContext/camers_operzal_ifns" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7c42ee6-d830-400d-b248-995a36806f96" absoluteBounds="1.3899999999999997, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 1.3124995); (6.4375 : 1.3124995); (6.4375 : 2)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/camers_operzal_ifns/camers_operzal_ifns_camers_operzal_general" />
+      <nodes>
+        <classShapeMoniker Id="634e96b0-c116-420e-ab2c-50eca9a8cdee" />
+        <classShapeMoniker Id="47a7aafe-d0e1-4385-b351-7e3dfdc75dd8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

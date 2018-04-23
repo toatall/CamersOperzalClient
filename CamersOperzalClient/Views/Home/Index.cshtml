@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Сервис видеонаблюдения оперзалов инспекций округа в режиме реального времени";
+}
+@using CamersOperzalClient.Models
+@model IEnumerable<Ifns>
+
+
+<div class="mid_col_big_left">
+    <div class="text_block_top no_border">
+        <div class="panel">
+            <div class="container">
+                <table style="text-align: left; width: 100%;" class="grid">
+                    <tr>
+                        <th align="left">Инспекция</th>
+                        <th align="left">Камеры</th>
+                    </tr>
+                    @foreach (Ifns ifns in Model)
+                    {
+                        <tr>
+                            <td style="padding-left: 10px;">@ifns.IfnsName</td>
+                            <td valign="middle">
+                                <b>
+                                    @{ int CamersCounter = 1; }
+                                    @foreach (General general in ifns.Generals)
+                                    {
+                                        @Html.ActionLink(CamersCounter.ToString(), "Camera", "Home", new { id = general.Id }, new { style = "color: " + ((general.CameraDisable) ? "#D70000" : "#004993") })
+                                        <text></text>
+                                        CamersCounter++;
+                                    }
+                                </b>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="right_col">
+    <div class="content_form">
+        <h3>Информация</h3>
+        <p>Для уточнения информации о Вашей задолженности обращайтесь в инспекцию по месту Вашего учета в качестве налогоплательщика.</p>       
+    </div>
+</div>

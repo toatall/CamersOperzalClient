@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76386694-E544-467F-A248-8291DA98F835}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CamersOperzalClient</RootNamespace>
+    <AssemblyName>CamersOperzalClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\c#\FKLoader\FKLoader\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\CamersOperzalAdmin\CamersOperzalAdmin\bin\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="CameraImages\" />
+    <Folder Include="fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContextDatabase.cs" />
+    <Compile Include="Models\DataClasses.cs">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Diagnostic.cs" />
+    <Compile Include="Models\General.cs" />
+    <Compile Include="Models\Ifns.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\arrow-bl.png" />
+    <Content Include="Content\arrow-return.png" />
+    <Content Include="Content\arrow02.gif" />
+    <Content Include="Content\arrows-down.png" />
+    <Content Include="Content\auto_nalog.png" />
+    <Content Include="Content\auto_nalog2.png" />
+    <Content Include="Content\backgrou.jpg" />
+    <Content Include="Content\background.jpg" />
+    <Content Include="Content\banner-8.gif" />
+    <Content Include="Content\banner-88x31-rambler-blue.gif" />
+    <Content Include="Content\bg000000.gif" />
+    <Content Include="Content\bg01.gif" />
+    <Content Include="Content\bg02.gif" />
+    <Content Include="Content\bg03.gif" />
+    <Content Include="Content\bg04.gif" />
+    <Content Include="Content\bg05.gif" />
+    <Content Include="Content\bgr00000.gif" />
+    <Content Include="Content\bg_btn_abort.gif" />
+    <Content Include="Content\bg_btn_cancel.gif" />
+    <Content Include="Content\bg_btn_cancel_hover.gif" />
+    <Content Include="Content\bg_btn_ok.gif" />
+    <Content Include="Content\bg_btn_ok_hover.gif" />
+    <Content Include="Content\border01.gif" />
+    <Content Include="Content\border02.gif" />
+    <Content Include="Content\border03.gif" />
+    <Content Include="Content\border04.gif" />
+    <Content Include="Content\border05.gif" />
+    <Content Include="Content\border06.gif" />
+    <Content Include="Content\box_b.png" />
+    <Content Include="Content\box_b000.png" />
+    <Content Include="Content\box_bl.png" />
+    <Content Include="Content\box_bl00.png" />
+    <Content Include="Content\box_br.png" />
+    <Content Include="Content\box_br00.png" />
+    <Content Include="Content\box_l.png" />
+    <Content Include="Content\box_l000.png" />
+    <Content Include="Content\box_r.png" />
+    <Content Include="Content\box_r000.png" />
+    <Content Include="Content\box_serv.png" />
+    <Content Include="Content\box_service_t.png" />
+    <Content Include="Content\box_t.png" />
+    <Content Include="Content\box_t000.png" />
+    <Content Include="Content\box_tl.png" />
+    <Content Include="Content\box_tl00.png" />
+    <Content Include="Content\box_tr.png" />
+    <Content Include="Content\box_tr00.png" />
+    <Content Include="Content\bullet_square_green.png" />
+    <Content Include="Content\bullet_square_red.png" />
+    <Content Include="Content\businessman.png" />
+    <Content Include="Content\button_back.png" />
+    <Content Include="Content\button_done.png" />
+    <Content Include="Content\button_next.png" />
+    <Content Include="Content\button_start.png" />
+    <Content Include="Content\calendar.png" />
+    <Content Include="Content\calendas.png" />
+    <Content Include="Content\center01.gif" />
+    <Content Include="Content\center011.gif" />
+    <Content Include="Content\center012.gif" />
+    <Content Include="Content\center013.gif" />
+    <Content Include="Content\center014.gif" />
+    <Content Include="Content\center02.gif" />
+    <Content Include="Content\center021.gif" />
+    <Content Include="Content\center022.gif" />
+    <Content Include="Content\center023.gif" />
+    <Content Include="Content\center024.gif" />
+    <Content Include="Content\center03.gif" />
+    <Content Include="Content\center04.gif" />
+    <Content Include="Content\center05.gif" />
+    <Content Include="Content\center06.gif" />
+    <Content Include="Content\center07.gif" />
+    <Content Include="Content\center08.gif" />
+    <Content Include="Content\center09.gif" />
+    <Content Include="Content\center10.gif" />
+    <Content Include="Content\center11.gif" />
+    <Content Include="Content\center12.gif" />
+    <Content Include="Content\center13.gif" />
+    <Content Include="Content\center14.gif" />
+    <Content Include="Content\center15.gif" />
+    <Content Include="Content\center_border.gif" />
+    <Content Include="Content\center_border011.gif" />
+    <Content Include="Content\center_border012.gif" />
+    <Content Include="Content\center_border021.gif" />
+    <Content Include="Content\center_border022.gif" />
+    <Content Include="Content\check.png" />
+    <Content Include="Content\common00.js" />
+    <Content Include="Content\controls.css" />
+    <Content Include="Content\count.gif" />
+    <Content Include="Content\counter.gif" />
+    <Content Include="Content\delete.png" />
+    <Content Include="Content\dept.css" />
+    <Content Include="Content\diagram.jpg" />
+    <Content Include="Content\DXR.css" />
+    <Content Include="Content\envd.png" />
+    <Content Include="Content\envd2.png" />
+    <Content Include="Content\factory.png" />
+    <Content Include="Content\favicon0.ico" />
+    <Content Include="Content\flag-bg.jpg" />
+    <Content Include="Content\flag-bg0.jpg" />
+    <Content Include="Content\FNS-logo_25.10.jpg" />
+    <Content Include="Content\FNS-logo_25.10.png" />
+    <Content Include="Content\folder_print_8948.png" />
+    <Content Include="Content\footer-b.png" />
+    <Content Include="Content\footer-bg.png" />
+    <Content Include="Content\forbidden.png" />
+    <Content Include="Content\functions.css" />
+    <Content Include="Content\gallerie-effects.css" />
+    <Content Include="Content\gallerie.css" />
+    <Content Include="Content\icon-round-small.png" />
+    <Content Include="Content\icon-word-small.png" />
+    <Content Include="Content\icons.gif" />
+    <Content Include="Content\icons000.gif" />
+    <Content Include="Content\icons2.gif" />
+    <Content Include="Content\input_arrow.png" />
+    <Content Include="Content\input_arrow_gray.png" />
+    <Content Include="Content\input_l.png" />
+    <Content Include="Content\input_l0.png" />
+    <Content Include="Content\input_li.png" />
+    <Content Include="Content\input_light_l.png" />
+    <Content Include="Content\input_light_m.png" />
+    <Content Include="Content\input_lj.png" />
+    <Content Include="Content\input_lk.png" />
+    <Content Include="Content\input_l_gray.png" />
+    <Content Include="Content\input_m.png" />
+    <Content Include="Content\input_m0.png" />
+    <Content Include="Content\input_m_gray.png" />
+    <Content Include="Content\input_r.png" />
+    <Content Include="Content\input_r0.png" />
+    <Content Include="Content\input_r_gray.png" />
+    <Content Include="Content\li-white.png" />
+    <Content Include="Content\li.png" />
+    <Content Include="Content\li000000.gif" />
+    <Content Include="Content\line.png" />
+    <Content Include="Content\li_neg00.gif" />
+    <Content Include="Content\load.gif" />
+    <Content Include="Content\loop.png" />
+    <Content Include="Content\loop0000.png" />
+    <Content Include="Content\map.jpg" />
+    <Content Include="Content\map00000.jpg" />
+    <Content Include="Content\map_www_.swf" />
+    <Content Include="Content\mediaelementplayer.css" />
+    <Content Include="Content\menu-left-selected-bg.png" />
+    <Content Include="Content\menu.css" />
+    <Content Include="Content\menu_bg.gif" />
+    <Content Include="Content\menu_bg.png" />
+    <Content Include="Content\menu_bg0.png" />
+    <Content Include="Content\menu_bor.png" />
+    <Content Include="Content\menu_bos.png" />
+    <Content Include="Content\menu_bot.png" />
+    <Content Include="Content\menu_del.png" />
+    <Content Include="Content\menu_delimiter.png" />
+    <Content Include="Content\menu_sel.png" />
+    <Content Include="Content\menu_selected_bg.png" />
+    <Content Include="Content\nalog-forms.css" />
+    <Content Include="Content\navigate01.gif" />
+    <Content Include="Content\navigate02.gif" />
+    <Content Include="Content\navigate03.gif" />
+    <Content Include="Content\navigate04.gif" />
+    <Content Include="Content\navigate07.gif" />
+    <Content Include="Content\navigate08.gif" />
+    <Content Include="Content\navigator-alternate-bg.png" />
+    <Content Include="Content\news_pic.png" />
+    <Content Include="Content\office-building.png" />
+    <Content Include="Content\pager_fu.png" />
+    <Content Include="Content\pager_full_arrow_l.png" />
+    <Content Include="Content\pager_full_arrow_l_disabled.png" />
+    <Content Include="Content\pager_full_arrow_r.png" />
+    <Content Include="Content\pager_full_arrow_r_disabled.png" />
+    <Content Include="Content\pager_full_button.png" />
+    <Content Include="Content\pager_fv.png" />
+    <Content Include="Content\print.css" />
+    <Content Include="Content\print_off.gif" />
+    <Content Include="Content\r74.gif" />
+    <Content Include="Content\r74.png" />
+    <Content Include="Content\r86.png" />
+    <Content Include="Content\refresh.png" />
+    <Content Include="Content\responsive-tables.css" />
+    <Content Include="Content\service-1-big.jpg" />
+    <Content Include="Content\service-1-small.png" />
+    <Content Include="Content\service-1.png" />
+    <Content Include="Content\service-2-big.jpg" />
+    <Content Include="Content\service-2-small.png" />
+    <Content Include="Content\service-2.png" />
+    <Content Include="Content\service-3-small.png" />
+    <Content Include="Content\service-3.png" />
+    <Content Include="Content\service-4-small.png" />
+    <Content Include="Content\service-4.png" />
+    <Content Include="Content\service-5-small.png" />
+    <Content Include="Content\service-5.png" />
+    <Content Include="Content\service-6-small.png" />
+    <Content Include="Content\service-6.png" />
+    <Content Include="Content\service0.png" />
+    <Content Include="Content\service1.png" />
+    <Content Include="Content\service_.png" />
+    <Content Include="Content\service_artificial_pic.png" />
+    <Content Include="Content\service_fisical_pic.png" />
+    <Content Include="Content\service_individual_pic.png" />
+    <Content Include="Content\service_m_bg.png" />
+    <Content Include="Content\sign.png" />
+    <Content Include="Content\sign0000.png" />
+    <Content Include="Content\sign_bottom.png" />
+    <Content Include="Content\sign_top.png" />
+    <Content Include="Content\site_tit.png" />
+    <Content Include="Content\site_title.png" />
+    <Content Include="Content\site_title_local.png" />
+    <Content Include="Content\speach_p.png" />
+    <Content Include="Content\speach_photo.png" />
+    <Content Include="Content\status01.gif" />
+    <Content Include="Content\status02.gif" />
+    <Content Include="Content\status03.gif" />
+    <Content Include="Content\step1_top.png" />
+    <Content Include="Content\step2_top.png" />
+    <Content Include="Content\step3_top.png" />
+    <Content Include="Content\step4_top.png" />
+    <Content Include="Content\stepresult_top.png" />
+    <Content Include="Content\step_bottom.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\surveillance_camera.png" />
+    <Content Include="Content\tabulato.png" />
+    <Content Include="Content\tabulator_bg.png" />
+    <Content Include="Content\tabulator_delimiter.png" />
+    <Content Include="Content\tabulatp.png" />
+    <Content Include="Content\tabulatq.png" />
+    <Content Include="Content\tabulatr.png" />
+    <Content Include="Content\top100.gif" />
+    <Content Include="Content\top10000.gif" />
+    <Content Include="Content\top20000.gif" />
+    <Content Include="Content\top30000.gif" />
+    <Content Include="Content\top40000.gif" />
+    <Content Include="Content\top50000.gif" />
+    <Content Include="Content\ui.dynatree.css" />
+    <Content Include="Content\usn_patent.png" />
+    <Content Include="Content\usn_patent2.png" />
+    <Content Include="Content\view.png" />
+    <Content Include="Content\wrapper-.png" />
+    <Content Include="Content\wrapper0.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\404.jpg" />
+    <Content Include="Images\adres_platejnie_rekvisits.png" />
+    <Content Include="Images\anketirovanie.png" />
+    <Content Include="Images\arrow_big.png" />
+    <Content Include="Images\arrow_calendar.png" />
+    <Content Include="Images\arrow_down.png" />
+    <Content Include="Images\arrow_down_black.png" />
+    <Content Include="Images\arrow_down_black2.png" />
+    <Content Include="Images\arrow_down_gray.png" />
+    <Content Include="Images\arrow_left.png" />
+    <Content Include="Images\arrow_right.png" />
+    <Content Include="Images\arrow_up_black.png" />
+    <Content Include="Images\arrow_up_gray.png" />
+    <Content Include="Images\baloon_top.png" />
+    <Content Include="Images\banner1.png" />
+    <Content Include="Images\banner2.png" />
+    <Content Include="Images\banner3.png" />
+    <Content Include="Images\banner4.png" />
+    <Content Include="Images\bg_footer_frame.png" />
+    <Content Include="Images\bg_line.png" />
+    <Content Include="Images\blue_back.png" />
+    <Content Include="Images\blue_btn_big.png" />
+    <Content Include="Images\blue_gradient.png" />
+    <Content Include="Images\btn_blue.png" />
+    <Content Include="Images\btn_blue2.png" />
+    <Content Include="Images\btn_light_blue.png" />
+    <Content Include="Images\btn_search.png" />
+    <Content Include="Images\camera_error.png" />
+    <Content Include="Images\chart_1.png" />
+    <Content Include="Images\chart_2.png" />
+    <Content Include="Images\chart_3.png" />
+    <Content Include="Images\chart_4.png" />
+    <Content Include="Images\checkbox.png" />
+    <Content Include="Images\close_big.png" />
+    <Content Include="Images\decl_picture.jpg" />
+    <Content Include="Images\dek2014.jpg" />
+    <Content Include="Images\deystvit_inn_jur.png" />
+    <Content Include="Images\dostup_EGRUL_EGRIP.png" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\dropdown_btn.png" />
+    <Content Include="Images\dropdown_gradient.png" />
+    <Content Include="Images\FAQ.png" />
+    <Content Include="Images\federal_adress_sistem.png" />
+    <Content Include="Images\file_types.png" />
+    <Content Include="Images\fiz_lico.png" />
+    <Content Include="Images\footer_back.png" />
+    <Content Include="Images\footer_menu.png" />
+    <Content Include="Images\forum_sayta_FNS.png" />
+    <Content Include="Images\gallery_arrows.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\ico03.png" />
+    <Content Include="Images\icon_addr.png" />
+    <Content Include="Images\icon_addr1.png" />
+    <Content Include="Images\icon_book1.png" />
+    <Content Include="Images\icon_cash.png" />
+    <Content Include="Images\icon_cash1.png" />
+    <Content Include="Images\icon_download.png" />
+    <Content Include="Images\icon_envd.png" />
+    <Content Include="Images\icon_eshn.png" />
+    <Content Include="Images\icon_expl.png" />
+    <Content Include="Images\icon_expl1.png" />
+    <Content Include="Images\icon_faq.png" />
+    <Content Include="Images\icon_faq1.png" />
+    <Content Include="Images\icon_form.png" />
+    <Content Include="Images\icon_form1.png" />
+    <Content Include="Images\icon_formdec.png" />
+    <Content Include="Images\icon_inn.png" />
+    <Content Include="Images\icon_inn1.png" />
+    <Content Include="Images\icon_ndfl.png" />
+    <Content Include="Images\icon_ndfls.png" />
+    <Content Include="Images\icon_nds.png" />
+    <Content Include="Images\icon_nifl.png" />
+    <Content Include="Images\icon_nio.png" />
+    <Content Include="Images\icon_note.png" />
+    <Content Include="Images\icon_note2.png" />
+    <Content Include="Images\icon_npo.png" />
+    <Content Include="Images\icon_phone.png" />
+    <Content Include="Images\icon_pics.png" />
+    <Content Include="Images\icon_pplz.png" />
+    <Content Include="Images\icon_pplz1.png" />
+    <Content Include="Images\icon_psn.png" />
+    <Content Include="Images\icon_question.png" />
+    <Content Include="Images\icon_rec.png" />
+    <Content Include="Images\icon_rec1.png" />
+    <Content Include="Images\icon_service.png" />
+    <Content Include="Images\icon_signin.png" />
+    <Content Include="Images\icon_time1.png" />
+    <Content Include="Images\icon_time2.png" />
+    <Content Include="Images\icon_time3.png" />
+    <Content Include="Images\icon_usn.png" />
+    <Content Include="Images\img01.png" />
+    <Content Include="Images\img02.png" />
+    <Content Include="Images\img03.png" />
+    <Content Include="Images\imuwestvennie_nalogi.png" />
+    <Content Include="Images\interest_1.png" />
+    <Content Include="Images\interest_2.png" />
+    <Content Include="Images\interest_3.png" />
+    <Content Include="Images\jur_lico.png" />
+    <Content Include="Images\lang_en.png" />
+    <Content Include="Images\lang_rus.png" />
+    <Content Include="Images\li.png" />
+    <Content Include="Images\link1.png" />
+    <Content Include="Images\link2.png" />
+    <Content Include="Images\link3.png" />
+    <Content Include="Images\link4.png" />
+    <Content Include="Images\list_arrow.png" />
+    <Content Include="Images\list_arrow_black.png" />
+    <Content Include="Images\lk.png" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\main_4_3.png" />
+    <Content Include="Images\main_4_41.png" />
+    <Content Include="Images\main_4_42.png" />
+    <Content Include="Images\main_4_43.png" />
+    <Content Include="Images\main_4_44.png" />
+    <Content Include="Images\map.jpg" />
+    <Content Include="Images\menu_1.png" />
+    <Content Include="Images\menu_11.png" />
+    <Content Include="Images\menu_2.png" />
+    <Content Include="Images\menu_21.png" />
+    <Content Include="Images\menu_3.png" />
+    <Content Include="Images\menu_31.png" />
+    <Content Include="Images\nalog_buhgalt_electr_otchetnost.png" />
+    <Content Include="Images\nav_active.png" />
+    <Content Include="Images\nedeyatvit_svidetelstva.png" />
+    <Content Include="Images\nedeystvit_inn_fiz.png" />
+    <Content Include="Images\nedeystvit_inn_jur.png" />
+    <Content Include="Images\news1.jpg" />
+    <Content Include="Images\news11.jpg" />
+    <Content Include="Images\news2.jpg" />
+    <Content Include="Images\news22.jpg" />
+    <Content Include="Images\news3.jpg" />
+    <Content Include="Images\news33.jpg" />
+    <Content Include="Images\news_picture.jpg" />
+    <Content Include="Images\news_picture2.jpg" />
+    <Content Include="Images\news_picture3.jpg" />
+    <Content Include="Images\news_shadow.png" />
+    <Content Include="Images\no-image.jpg" />
+    <Content Include="Images\norm_metod_materials_FNS.png" />
+    <Content Include="Images\obratitsya_FNS.png" />
+    <Content Include="Images\online_zapis_inspekciya.png" />
+    <Content Include="Images\pic1.jpg" />
+    <Content Include="Images\pic2.jpg" />
+    <Content Include="Images\pic3.jpg" />
+    <Content Include="Images\pic4.jpg" />
+    <Content Include="Images\picture1.jpg" />
+    <Content Include="Images\picture2.jpg" />
+    <Content Include="Images\picture3.jpg" />
+    <Content Include="Images\picture4.jpg" />
+    <Content Include="Images\picture5.jpg" />
+    <Content Include="Images\pic_lk.jpg" />
+    <Content Include="Images\pic_reg.jpg" />
+    <Content Include="Images\pixel_black.png" />
+    <Content Include="Images\pixel_white.png" />
+    <Content Include="Images\pochtovaya_rassilka_FNS.png" />
+    <Content Include="Images\podacha_electr_doc_IP_JUR.png" />
+    <Content Include="Images\podacha_zayavki_IP.png" />
+    <Content Include="Images\podacha_zayavl_FL.png" />
+    <Content Include="Images\poll.png" />
+    <Content Include="Images\provre_sebya_kontragenta.png" />
+    <Content Include="Images\raziyasneniya_FNS.png" />
+    <Content Include="Images\region_map.swf" />
+    <Content Include="Images\reweniya_po_jalobam.png" />
+    <Content Include="Images\scroll_back.png" />
+    <Content Include="Images\scroll_back2.png" />
+    <Content Include="Images\scroll_drag.png" />
+    <Content Include="Images\scroll_drag2.png" />
+    <Content Include="Images\separator-info.png" />
+    <Content Include="Images\separator_footer.png" />
+    <Content Include="Images\separator_menu.png" />
+    <Content Include="Images\separator_nav.png" />
+    <Content Include="Images\service_40.png" />
+    <Content Include="Images\shadow.png" />
+    <Content Include="Images\small_icons.png" />
+    <Content Include="Images\sm_arr.png" />
+    <Content Include="Images\sm_arr2.png" />
+    <Content Include="Images\sozday_business.png" />
+    <Content Include="Images\sroki_nalog_uvedomleniy.png" />
+    <Content Include="Images\stat_active.png" />
+    <Content Include="Images\struct.jpg" />
+    <Content Include="Images\struct_big.jpg" />
+    <Content Include="Images\tablica.jpg" />
+    <Content Include="Images\tab_active.png" />
+    <Content Include="Images\top.png" />
+    <Content Include="Images\top_gradient.png" />
+    <Content Include="Images\top_map.png" />
+    <Content Include="Images\uplata_gospowlini.png" />
+    <Content Include="Images\upper_arrow.png" />
+    <Content Include="Images\uznat_INN.png" />
+    <Content Include="Images\uznat_jalobe.png" />
+    <Content Include="Images\vakansii.png" />
+    <Content Include="Images\videocamera.png" />
+    <Content Include="Images\vipiska_EGRUL_EGRIP.png" />
+    <Content Include="Images\zaplati_nalogi.png" />
+    <Content Include="Images\zapolnit_platejnoe_poruchenie.png" />
+    <Content Include="Scripts\flashmediaelement.swf" />
+    <Content Include="Scripts\functions.js" />
+    <Content Include="Scripts\functions_init.js" />
+    <Content Include="Scripts\glDatePicker.js" />
+    <Content Include="Scripts\glDatePicker.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery-ui.custom.min.js" />
+    <Content Include="Scripts\jquery.1.10.js" />
+    <Content Include="Scripts\jquery.cascade.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.dynatree.js" />
+    <Content Include="Scripts\jquery.dynatree.min.js" />
+    <Content Include="Scripts\jquery.gallerie.js" />
+    <Content Include="Scripts\jquery.icheck.js" />
+    <Content Include="Scripts\jquery.jscrollpane.js" />
+    <Content Include="Scripts\jquery.jscrollpane.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
+    <Content Include="Scripts\jquery.smslider.min.js" />
+    <Content Include="Scripts\jquery.ui.autocomplete.combobox.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-ru.min.js" />
+    <Content Include="Scripts\lightbox-2.6.min.js" />
+    <Content Include="Scripts\mediaelement-and-player.js" />
+    <Content Include="Scripts\responsive-tables.js" />
+    <Content Include="Scripts\tree.init.js" />
+    <Content Include="Scripts\ui\i18n\jquery-ui-i18n.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-af.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ar-DZ.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ar.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-az.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-be.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-bg.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-bs.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ca.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-cs.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-cy-GB.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-da.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-de.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-el.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-en-AU.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-en-GB.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-en-NZ.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-eo.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-es.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-et.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-eu.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-fa.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-fi.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-fo.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-fr-CA.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-fr-CH.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-fr.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-gl.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-he.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-hi.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-hr.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-hu.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-hy.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-id.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-is.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-it.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ja.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ka.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-kk.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-km.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ko.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ky.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-lb.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-lt.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-lv.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-mk.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ml.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ms.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-nb.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-nl-BE.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-nl.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-nn.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-no.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-pl.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-pt.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-rm.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ro.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ru.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-sk.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-sl.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-sq.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-sr-SR.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-sr.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-sv.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-ta.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-th.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-tj.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-tr.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-uk.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-vi.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-zh-HK.js" />
+    <Content Include="Scripts\ui\i18n\jquery.ui.datepicker-zh-TW.js" />
+    <Content Include="Scripts\ui\jquery-ui.custom.js" />
+    <Content Include="Scripts\ui\jquery.ui.accordion.js" />
+    <Content Include="Scripts\ui\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\ui\jquery.ui.button.js" />
+    <Content Include="Scripts\ui\jquery.ui.core.js" />
+    <Content Include="Scripts\ui\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\ui\jquery.ui.dialog.js" />
+    <Content Include="Scripts\ui\jquery.ui.draggable.js" />
+    <Content Include="Scripts\ui\jquery.ui.droppable.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-blind.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-bounce.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-clip.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-drop.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-explode.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-fade.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-fold.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-highlight.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-pulsate.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-scale.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-shake.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-slide.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect-transfer.js" />
+    <Content Include="Scripts\ui\jquery.ui.effect.js" />
+    <Content Include="Scripts\ui\jquery.ui.menu.js" />
+    <Content Include="Scripts\ui\jquery.ui.mouse.js" />
+    <Content Include="Scripts\ui\jquery.ui.position.js" />
+    <Content Include="Scripts\ui\jquery.ui.progressbar.js" />
+    <Content Include="Scripts\ui\jquery.ui.resizable.js" />
+    <Content Include="Scripts\ui\jquery.ui.selectable.js" />
+    <Content Include="Scripts\ui\jquery.ui.slider.js" />
+    <Content Include="Scripts\ui\jquery.ui.sortable.js" />
+    <Content Include="Scripts\ui\jquery.ui.spinner.js" />
+    <Content Include="Scripts\ui\jquery.ui.tabs.js" />
+    <Content Include="Scripts\ui\jquery.ui.tooltip.js" />
+    <Content Include="Scripts\ui\jquery.ui.widget.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery-ui-i18n.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-af.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ar-DZ.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ar.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-az.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-be.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-bg.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-bs.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ca.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-cs.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-cy-GB.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-da.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-de.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-el.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-en-AU.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-en-GB.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-en-NZ.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-eo.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-es.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-et.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-eu.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-fa.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-fi.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-fo.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-fr-CA.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-fr-CH.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-fr.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-gl.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-he.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-hi.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-hr.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-hu.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-hy.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-id.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-is.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-it.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ja.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ka.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-kk.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-km.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ko.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ky.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-lb.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-lt.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-lv.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-mk.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ml.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ms.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-nb.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-nl-BE.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-nl.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-nn.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-no.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-pl.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-pt-BR.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-pt.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-rm.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ro.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ru.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-sk.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-sl.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-sq.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-sr-SR.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-sr.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-sv.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-ta.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-th.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-tj.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-tr.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-uk.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-vi.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-zh-CN.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-zh-HK.min.js" />
+    <Content Include="Scripts\ui\minified\i18n\jquery.ui.datepicker-zh-TW.min.js" />
+    <Content Include="Scripts\ui\minified\jquery-ui.custom.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.accordion.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.autocomplete.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.button.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.core.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.datepicker.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.dialog.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.draggable.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.droppable.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-blind.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-bounce.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-clip.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-drop.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-explode.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-fade.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-fold.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-highlight.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-pulsate.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-scale.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-shake.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-slide.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect-transfer.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.effect.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.menu.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.mouse.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.position.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.progressbar.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.resizable.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.selectable.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.slider.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.sortable.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.spinner.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.tabs.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.tooltip.min.js" />
+    <Content Include="Scripts\ui\minified\jquery.ui.widget.min.js" />
+    <Content Include="Scripts\yandex_maps.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Content\forbidden.png0" />
+    <Content Include="Models\DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Home\Camera.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <None Include="Properties\PublishProfiles\CameraOperzal.pubxml" />
+    <Content Include="Scripts\functions.js.mine" />
+    <Content Include="Scripts\functions.js.r8" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>28480</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:28480/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

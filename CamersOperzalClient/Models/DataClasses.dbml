@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SERVICES" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.186.201.14;Initial Catalog=SERVICES;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SERVICESConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.camers_operzal_general" Member="camers_operzal_general">
+    <Type Name="camers_operzal_general">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ifns_code" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="camera_img_link" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="camera_img_file" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="camera_disable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="camera_disable_description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="camera_user" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="camera_password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="camers_operzal_ifns_camers_operzal_general" Member="camers_operzal_ifns" ThisKey="ifns_code" OtherKey="ifns_cod" Type="camers_operzal_ifns" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.camers_operzal_ifns" Member="camers_operzal_ifns">
+    <Type Name="camers_operzal_ifns">
+      <Column Name="ifns_cod" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ifns_name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="[order]" Member="order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="camers_operzal_ifns_camers_operzal_general" Member="camers_operzal_general" ThisKey="ifns_cod" OtherKey="ifns_code" Type="camers_operzal_general" />
+    </Type>
+  </Table>
+</Database>

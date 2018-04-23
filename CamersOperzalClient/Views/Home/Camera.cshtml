@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Сервис видеонаблюдения оперзалов инспекций округа в режиме реального времени";
+}
+@using CamersOperzalClient.Models
+@model General
+
+@{
+    string ImageResource;
+    /*if (System.IO.File.Exists(Server.MapPath("~/CameraImages/" + System.IO.Path.GetFileName(Model.CameraImgFile))))
+    {
+        ImageResource = "/CameraImages/" + System.IO.Path.GetFileName(Model.CameraImgFile);
+    }
+    else
+    {
+        ImageResource = "/Images/camera_error.png";
+    }*/
+    ImageResource = Url.Action("CameraUrl", "Home", new { id = Model.Id });
+}
+
+<div class="mid_col_big_left1">
+    <div class="text_block_top no_border">
+        <div class="panel">
+            <div class="container">
+                <div class="content_form">
+                    <form><h3>@Model.Ifns.IfnsName</h3></form>
+                    @if (Model.CameraDisable != null && Model.CameraDisable == false)
+                    { 
+                        <!--img src="/images/loader.gif" id="camera_image" /-->
+                        <iframe src="@ImageResource" id="camera_image" frameborder="0" style="overflow: hidden; width: 900px; height: 600px;"></iframe>
+                        @section scripts
+                        {
+                        <script type="text/javascript">
+                            
+                            /*
+                            function refreshImage() {
+                                var rand = Math.random() * 1000 + 1000;
+                                rand = Math.round(rand);
+                                var url = '';
+                            if (url.indexOf("?") > 1) {
+                                url += '&' + rand;
+                            }
+                            else {
+                                url += '?' + rand;
+                            }
+
+                            $('#camera_image').attr('src', url);
+                            }*/
+
+                            function refreshImage()
+                            {
+                                document.getElementById('camera_image').contentWindow.location.reload(true);
+                            }
+
+                            setInterval(refreshImage, 5000);
+                            refreshImage();
+                        </script>
+                        }
+                }
+                else
+                {
+                <div class="form_error">
+                    @Model.CameraDisableDescription
+                </div>
+}
+                <br /><br /><a href="@Url.Action("Index", "Home")" class="blue_button" style="width:50px;">Назад</a>
+</div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

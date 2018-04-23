@@ -1,0 +1,930 @@
+.dropdown_btn {
+  position:relative;
+  z-index:102;
+}
+
+.selectmenu-menu {
+    display: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1110;
+  border:1px solid #BDD4D9;
+  background:#fff;
+  margin-top:-1px;
+}
+
+.selectmenu-menu li {
+    color: #0266b2;
+    font-size: 1em;
+    line-height: 24px;
+    padding: 2px 9px;
+    white-space:nowrap;
+}
+
+.select_type2 li {
+    color: #000;
+}
+
+.selectmenu-menu li span {
+    display:block;
+  overflow:hidden;
+}
+
+.selectmenu-menu li:hover, .selectmenu-menu li.active {
+    background:#e6f0fc;
+}
+
+.select_type2 li:hover, .select_type2 li.active {
+    background:#0b6eb3;
+    color:#fff;
+}
+
+.selectmenu-menu ul {
+    cursor: pointer;
+    list-style: none outside none;
+    margin: 20px 0px 20px 0px;
+    max-height: 196px;
+  overflow:scroll;
+    overflow-y: hidden;
+  overflow-x:hidden;
+    padding: 0;
+}
+
+.dropdown_up {
+top:0px;
+background: url(../images/arrow_down.png) 49% -304px no-repeat;
+}
+
+.dropdown_up:hover {
+  background-position: 49% -279px;
+}
+
+.dropdown_down {
+top:215px;
+background: url(../images/arrow_down.png) 49% -80px no-repeat;
+}
+
+.dropdown_down:hover {
+top:215px;
+background-position: 49% -105px;
+}
+
+.dropdown-arrows{
+  height: 20px;
+  width:100%;
+  cursor:pointer;
+  position:absolute;
+  z-index:101;
+}
+
+.relative{
+  position:relative;
+}                
+
+
+.tabs span.active span {
+    background: url("../images/tab_active.png") repeat-x scroll center top rgba(0, 0, 0, 0);
+    border: 1px solid #FFFFFF;
+    color: #0B6EB3;
+   
+    
+}  
+
+.tabs > span span {
+    display:block;
+     padding: 11px 0;
+    cursor:pointer;
+    font-size:1em;
+    text-align: center;
+    border:0;
+    float:none;
+    margin:0;
+}          
+
+
+/* ----------------------------------------------------------------------------------------*/
+/* line 7, ../sass/lightbox.sass */
+body:after {
+  content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
+  display: none;
+}
+
+/* line 11, ../sass/lightbox.sass */
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+/* line 20, ../sass/lightbox.sass */
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+/* line 28, ../sass/lightbox.sass */
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 32, ../sass/lightbox.sass */
+.lightbox a img {
+  border: none;
+}
+
+/* line 35, ../sass/lightbox.sass */
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 44, ../sass/lightbox.sass */
+.lb-container {
+  padding: 4px;
+}
+
+/* line 47, ../sass/lightbox.sass */
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 56, ../sass/lightbox.sass */
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) no-repeat;
+}
+
+/* line 63, ../sass/lightbox.sass */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 71, ../sass/lightbox.sass */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 74, ../sass/lightbox.sass */
+.lb-nav a {
+  outline: none;
+}
+
+/* line 77, ../sass/lightbox.sass */
+.lb-prev, .lb-next {
+  width: 49%;
+  height: 100%;
+  cursor: pointer;
+  /* Trick IE into showing hover */
+  display: block;
+}
+
+/* line 84, ../sass/lightbox.sass */
+.lb-prev {
+  left: 0;
+  float: left;
+}
+/* line 87, ../sass/lightbox.sass */
+.lb-prev:hover {
+  background: url(../images/arrow-gal.png) left 48% no-repeat;
+}
+
+/* line 90, ../sass/lightbox.sass */
+.lb-next {
+  right: 0;
+  float: right;
+}
+/* line 93, ../sass/lightbox.sass */
+.lb-next:hover {
+  background: url(../images/arrow-gal.png) right 48% no-repeat;
+}
+
+/* line 96, ../sass/lightbox.sass */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 103, ../sass/lightbox.sass */
+.lb-data {
+  padding: 0 4px;
+  color: #bbbbbb;
+}
+/* line 106, ../sass/lightbox.sass */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+/* line 111, ../sass/lightbox.sass */
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+/* line 115, ../sass/lightbox.sass */
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+/* line 121, ../sass/lightbox.sass */
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 130, ../sass/lightbox.sass */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/*slider*/
+/*** Overall MovingBoxes Slider ***/
+.mb-wrapper {
+    border: 0px solid #ccc;
+    margin: 0 auto 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    /*box-shadow: inset 0 0 10px #888;*/
+}
+
+/* Panel Wrapper */
+.mb-slider, .mb-scroll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+
+    /***(>'-')> Control Panel Font size here <('-'<)***/
+    font-size: 18px;
+}
+
+/* active slider border highlight */
+.mb-active-slider {
+    border-color: #333;
+}
+
+/*** Slider panel ***/
+.mb-slider .mb-panel {
+    margin: 0;
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+    float: left;
+    list-style: none;
+}
+
+/* Cursor to arrow over current panel, pointer for all others,
+change .current class name using plugin option, currentPanel : 'current' */
+.mb-slider .mb-panel.current {
+    cursor: auto;
+}
+
+/*** Inside the panel ***/
+.mb-inside {
+    padding: 0px;
+    border: 0px solid #999;
+}
+
+.mb-inside * {
+    max-width: 100%;
+}
+
+/*** Left & Right Navigation Arrows ***/
+a.mb-scrollButtons {
+    display: block;
+    width: 23px;
+    height: 39px;
+    background: transparent url(../images/arrow-gal.png) no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -29px; /* if you change the arrow images, you may have to adjust this (1/2 height of arrow image) */
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+}
+a.mb-scrollButtons.mb-left {
+    background-position: left top;
+    left: -35px;
+}
+a.mb-scrollButtons.mb-right {
+    background-position: right top;
+    right: -35px;
+}
+a.mb-scrollButtons.mb-left:hover {
+    background-position: left bottom;
+}
+a.mb-scrollButtons.mb-right:hover {
+    background-position: right bottom;
+}
+a.mb-scrollButtons.disabled {
+    display: none;
+}
+
+/*** Controls added below the panels ***/
+.mb-controls {
+    margin: 0 auto;
+    text-align: center;
+    background: #ccc;
+    position: relative;
+    z-index: 100;
+    display:none;
+}
+.mb-controls a {
+    color: #666;
+    font: 18px/2.2 Georgia, Serif;
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px;
+    margin: 0 5px 0 0;
+    text-align: center;
+    outline: 0;
+}
+.mb-controls a:hover {
+    color: black;
+}
+.mb-controls a.current {
+    color: white;
+}
+.mb-active-slider .mb-controls {
+    background: #333;
+    display:none;
+}
+
+/*------------------*/
+.gldp-default {
+    position: absolute;
+    font-family: 'helvetica';
+}
+
+/* Core style for every cell */
+.gldp-default .core {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+    float: left;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    color: #333333;
+    
+}
+
+/* Cell border */
+.gldp-default .border {
+    border-style: solid;
+    border-width: 0;
+    border-color: #e3edee;
+}
+
+/* Month/Year text and select */
+.gldp-default .monyear,
+.gldp-default .monyear select {
+    font-size: 16px !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
+  display:none;
+}
+
+/* Month/Year text */
+.gldp-default .monyear span {
+    margin: 0 5px 0 5px;
+}
+
+/* Prev/Next arrows */
+.gldp-default .prev-arrow,
+.gldp-default .next-arrow {
+    color: #222;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.gldp-default .prev-arrow:active,
+.gldp-default .next-arrow:active {
+    color: #f00;
+}
+
+.gldp-default .prev-arrow-off,
+.gldp-default .next-arrow-off {
+    color: #222;
+    opacity: 0.15;
+}
+
+.gldp-default > div {
+    height:28px !important;
+    line-height: 28px !important;
+}
+
+/* Days of the week */
+.gldp-default .dow {
+    color: #0c6fb2;
+    font-weight: normal;
+    border-color:#fff !important;
+    cursor: text !important;
+    background: #fff;
+
+}
+
+/* Weekdays */
+.gldp-default .mon,
+.gldp-default .tue,
+.gldp-default .wed,
+.gldp-default .thu,
+.gldp-default .fri {
+    font-weight: normal;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+/* Weekend days */
+.gldp-default .sat,
+.gldp-default .sun {
+    color: #333333;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+/* Selectable days that are outside of current month being shown */
+.gldp-default .outday {
+    color: #b3b3b3 !important;
+}
+
+/* Hover */
+.gldp-default .mon:hover,
+.gldp-default .tue:hover,
+.gldp-default .wed:hover,
+.gldp-default .thu:hover,
+.gldp-default .fri:hover,
+.gldp-default .sat:hover,
+.gldp-default .sun:hover {
+    
+}
+
+/* Non-Selectable days */
+.gldp-default .noday {
+    color: #444;
+    font-weight: normal;
+    cursor: text !important;
+    
+}
+
+/* Currently selected day */
+.gldp-default .selected {
+    color: #444;
+  border:1px solid #c00 !important;
+    
+}
+
+/* Today */
+.gldp-default .today {
+    color: #444;
+    border-color: #e3edee;
+    
+}
+
+/* Special */
+.gldp-default .special {
+    color: #fff;
+    border-color: #0b6eb2;
+    background: #0b6eb2;
+    border-radius:5px;
+}
+
+.gldp-default > div:nth-child(11),
+.gldp-default > div:nth-child(12),
+.gldp-default > div:nth-child(13),
+.gldp-default > div:nth-child(16),
+.gldp-default > div:nth-child(17),
+.gldp-default > div:nth-child(14),
+.gldp-default > div:nth-child(15) { border-top:1px solid #fff;}
+
+.gldp-default > div:nth-last-child(5),
+.gldp-default > div:nth-last-child(7),
+.gldp-default > div:nth-last-child(4),
+.gldp-default > div:nth-last-child(3),
+.gldp-default > div:nth-last-child(2),
+.gldp-default > div:nth-last-child(1),
+.gldp-default > div:nth-last-child(6) { border-bottom:1px solid #fff;}
+
+
+.gldp-flatwhite {
+    position: absolute; font-family: 'helvetica';
+}
+.gldp-flatwhite .core {
+    box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;    position: relative; float: left;
+    padding: 0; margin: 0;  font-size: 14px;    text-align: center; cursor: pointer;    color: #222;    background: #ffffff;
+}
+.gldp-flatwhite .border {
+    border-style: solid;    border-width: 0;    border-color: #fff;
+}
+.gldp-flatwhite .monyear,.gldp-flatwhite .monyear select {  font-size: 16px !important; font-weight: bold;  background: #eee; display:none;}
+.gldp-flatwhite .monyear span { margin: 0 5px 0 5px;}
+.gldp-flatwhite .prev-arrow,
+.gldp-flatwhite .next-arrow {color: #666;text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);}
+.gldp-flatwhite .prev-arrow:active, .gldp-flatwhite .next-arrow:active {    color: #000;}
+.gldp-flatwhite .prev-arrow-off, .gldp-flatwhite .next-arrow-off {color: #000;opacity: 0.15;}
+.gldp-flatwhite .dow {color: #222;font-weight: bold;    cursor: wait !important;background: #eee;}
+.gldp-flatwhite .mon, .gldp-flatwhite .tue, .gldp-flatwhite .wed, .gldp-flatwhite .thu, .gldp-flatwhite .fri {  font-weight: bold;}
+.gldp-flatwhite .sat, .gldp-flatwhite .sun {color: #888;    font-weight: bold;}
+.gldp-flatwhite .outday {color: #aaa !important;}
+.gldp-flatwhite .mon:hover,.gldp-flatwhite .tue:hover,.gldp-flatwhite .wed:hover,.gldp-flatwhite .thu:hover,.gldp-flatwhite .fri:hover,.gldp-flatwhite .sat:hover,.gldp-flatwhite .sun:hover {  background: #eee;}
+.gldp-flatwhite .noday {    color: #bbb;    font-weight: normal;    cursor: wait !important;    background: #ddd;}
+.gldp-flatwhite .selected { color: #fff;    font-weight: bold;  border-color: #888; background: #aaa;}
+.gldp-flatwhite .today {    color: #fff;font-weight: bold;  border-color: #000; background: #222;}
+.gldp-flatwhite .special {  color: #fff;    font-weight: bold;  border-color: #444; background: #666;}
+
+.event_div{display:none; z-index:2000;}
+.gldp-default .mon{ border-left:1px solid #fff !important; }
+.gldp-default .mon:nth-of-class(1){ border-top:1px solid #fff !important; }
+
+.gldp-default .sun{ border-right:1px solid #fff !important; } 
+
+.calendar_holder .dropdown {
+  width:157px;
+}
+
+.gldp-default > div:nth-child(1){
+  display:none;
+}
+.gldp-default > div:nth-child(2) > div > span{
+  display:none;
+}
+
+.gldp-default > div:nth-child(2){
+  width:100% !important;
+  border-top:0px !important;
+}
+.gldp-default > div:nth-child(3){
+  display:none;
+}
+
+.calendar_holder {position:relative;}
+.text_block > .today {min-height:99px;}
+
+.calendar_holder .gldp-default {
+  top:58px !important;
+  left:57px !important;
+}
+.event_div{ background:#fff;border:1px solid #bdd4d9;margin:-267px 0 0;height:221px;padding:22px;position:relative;box-shadow:0 1px 3px #CECECF; }
+
+
+#mini-date .scroll-pane{ height: 100%;position: relative; }
+
+.news_region .dropdown{width:62%;}
+
+.region .dropdown_text input {
+  border:0px;
+  /*background:green;*/
+  font-family: Arial,Helvetica,sans-serif;
+  height:1em;
+  display:inline-block;
+    cursor: text;
+    line-height: 1.2em;
+  font-size:1em;
+    overflow: hidden;
+  width:90%;
+  
+}
+
+/* file input */
+
+.nice {
+  -moz-border-radius: 4px; 
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  width:313px;
+}
+.nice .NFI-button {
+  -moz-border-radius-topright: 3px; 
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 3px;
+
+  background:url('../images/btn_blue.png') bottom repeat-x #007dc5;
+  border: solid #0172bd 1px;
+  border-bottom: solid #00428d 1px;
+  
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+}
+.nice .NFI-button:hover {
+  background:url('../images/btn_blue.png') top repeat-x #0272b6;
+  text-shadow: 0px -1px 0px #111;
+  border: solid #000 1px;
+  
+}
+.nice .NFI-filename {
+  -moz-border-radius-topleft: 3px; 
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px; 
+  border-bottom-left-radius: 3px;
+
+  width: 200px;
+  border: solid #dae2e5 1px;
+  border-right: none;
+  height: 30px;
+  line-height: 30px;
+  
+  background: #fff;
+  color: #777;
+  text-shadow: 0px 1px 0px #fff;
+}
+
+span.flag-ru{
+background:url(../images/flag/ru.png) 85px 7px no-repeat;
+}
+li.flag-ru span {
+  background:url(../images/flag/ru.png) right 5px no-repeat;
+}
+
+
+span.flag-en{
+background:url(../images/flag/en.png) 85px 7px no-repeat;
+}
+
+li.flag-en span {
+  background:url(../images/flag/en.png) right 5px no-repeat;
+}
+
+
+/* //////////////////////////////// default css-styles for carousel /////////////////////////// */
+
+#carousel_container{ padding:20px 0; }
+
+#carousel_inner {
+float:left; /* important for inline positioning */
+width:640px; /* important (this width = width of list item(including margin) * items shown */ 
+overflow: hidden;  /* important (hide the items outside the div) */
+/* non-important styling bellow */
+}
+
+#carousel_ul {
+position:relative;
+left:-210px; /* important (this should be negative number of list items width(including margin) */
+list-style-type: none; /* removing the default styling for unordered list items */
+margin: 0px;
+padding: 0px;
+width:9999px; /* important */
+/* non-important styling bellow */
+padding-bottom:10px;
+}
+
+#carousel_ul li{
+float: left; /* important for inline positioning of the list items */                                    
+width:200px;  /* fixed width, important */
+/* just styling bellow*/
+padding:0px 20px 0 0;
+}
+
+#carousel_ul li img {
+.margin-bottom:-4px; /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
+/* styling */
+cursor:pointer;
+cursor: hand; 
+border:0px; 
+width:100%;
+}
+#left_scroll, #right_scroll{
+float:left; 
+height:135px; 
+width:25px; 
+cursor: pointer;
+cursor: hand;
+}
+#left_scroll{ background:url(../images/arrow_left.png) left center no-repeat; }
+#right_scroll{ background:url(../images/arrow_right.png) right center no-repeat; }
+
+@media screen and (max-width: 960px){
+
+  #carousel_inner { width: 400px; }
+  #left_scroll, #right_scroll{ width:20px }
+}
+
+@media screen and (max-width: 768px){
+
+  #carousel_inner { width: 220px; }
+  #left_scroll, #right_scroll{ width:25px }
+}
+
+
+#news_slider{ height:295px; }
+
+#news_slider ul,#service_slider ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.news_descr{ width:415px;display:block;position:absolute;background:url("../images/news_shadow.png") bottom repeat-x;color:#fff;height:63px;
+              padding:20px 15px 0;margin-top:-87px;line-height:1.3em; }
+.news_descr a{ color:#fff;font-weight:bold;text-decoration:none; }
+.news_descr p{ margin:5px 0;font-size:0.9em; }
+
+
+#service_slider{ height:207px;padding-top:20px; }
+#service_slider .with_icon>div{ width:340px; }
+    
+.sm_slide {
+  color: #3d3d3d;
+  display: none;
+  height: 270px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+}
+
+.sm_slide.active {
+  display: block;
+  visibility: visible;
+}
+
+.sm_slide img {
+  max-width: 100%;
+}
+
+.sm_prev, .sm_next {
+  background: url(../images/sm_arr2.png) no-repeat;
+  cursor: pointer;
+  display: block;
+  font-style: normal;
+  height: 30px;
+  margin: -33px 0 0 0;
+  width: 30px;
+  z-index: 50;
+  position:absolute;
+}
+
+.sm_prev {
+  background-position: 10px 10px;
+}  
+
+.sm_next {
+  background-position: -65px 10px;
+  margin-left:410px;
+}
+
+#service_slider .sm_prev, #service_slider .sm_next{ margin-top:-230px; }
+
+#service_slider .sm_prev {
+  background-position: 5px -50px;
+}  
+
+#service_slider .sm_next {
+  background-position: -40px -50px;
+  margin-left:282px;
+}
+
+#news_slider .sm_nav {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  padding: 5px 0px;
+  position: absolute;
+  z-index: 999;
+  margin:-35px 0 0 190px;
+}
+
+#service_slider .sm_nav {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  padding: 5px 2px;
+  position: absolute;
+  z-index: 999;
+  margin:-238px 0 0 20px;
+}
+
+.sm_nav-item {
+  cursor: pointer;
+  float: left;
+  height: 14px;
+  padding: 4px;
+  width: 9px;
+  z-index: 999;
+  list-style-type: none;
+  font-size: 11px;
+  color: #ccc;
+}
+
+.sm_nav-item i {
+  display: block;
+  width: 9px;
+  height: 9px;
+  position: relative;
+  top: 5px;
+  left: 4px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+  border-radius: 13px;
+  background-color: #e8f0f7;
+}
+
+.sm_nav-item.active, .sm_nav-item.active:hover {
+  cursor: default;
+  color: #7e7e7e;
+}
+
+.sm_nav-item.active i{
+  background-color: #f60;
+}
+
+.sm_nav-item:hover i {
+  background: #ccc;
+}
+
+.sm_nav-item.active:hover i{
+  background-color: #ccc;
+}
+
+@media screen and (max-width: 480px){
+
+  .sm_next { margin-left:83%; }
+  #news_slider .sm_nav { margin-left:38%; }
+
+}

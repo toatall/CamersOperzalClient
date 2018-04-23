@@ -1,0 +1,37 @@
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+
+/* Mobile */
+
+table.responsive_mobile { margin-bottom: 0; }
+table.responsive_mobile td, table.responsive_mobile th { position:relative; white-space:nowrap; overflow:hidden; }
+table.responsive_mobile th:first-child, table.responsive_mobile td:first-child, table.responsive_mobile.pinned td { display:none; }
+
+.pinned table.responsive_mobile td, .pinned table.responsive_mobile th { position:static; white-space:normal; overflow:auto; }
+.pinned table.responsive_mobile th:first-child, .pinned table.responsive_mobile td:first-child, 
+.pinned table.responsive_mobile.pinned td { display:table-cell;white-space:nowrap; }
+
+	
+	.pinned { position:absolute; left:0; top:0; background:#fff; width:100px; overflow:hidden; overflow-x:scroll; border-right:1px solid #e4e4e4; }
+	.pinned table {  width: 100%; }
+	.pinned table th, .pinned table td { white-space:nowrap; }
+	.pinned td:last-child {  }
+	
+	div.table-wrapper { position: relative; margin-bottom:20px; overflow:hidden;  }
+	div.table-wrapper div.scrollable { margin-left:100px; }
+	div.table-wrapper div.scrollable { overflow:scroll; overflow-y:hidden; }	
+	

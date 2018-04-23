@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Федеральная Налоговая служба - @ViewBag.Title</title>
+    
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/functions.css">
+    
+    <script type="text/javascript" src="~/Scripts/jquery.1.10.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/functions.js"></script>
+    <script type="text/javascript" src="~/Scripts/functions_init.js"></script>
+   
+     <!-- Responsive tables -->
+    <link rel="stylesheet" href="~/Content/responsive-tables.css">
+    <script src="~/Scripts/responsive-tables.js"></script>
+
+    <!-- Custom checkbox & radio -->
+    <link rel="stylesheet" href="~/Content/controls.css">
+    <script src="~/Scripts/jquery.icheck.js"></script>
+
+    <!-- Custom scroll -->
+    <link rel="stylesheet" href="~/Content/jquery.jscrollpane.css">
+    <script src="~/Scripts/jquery.mousewheel.js"></script>
+    <script src="~/Scripts/jquery.jscrollpane.min.js"></script>
+
+    <!-- Listbox -->
+    <link rel="stylesheet" href="~/Content/ui.dynatree.css">
+    <script src="~/Scripts/jquery.dynatree.min.js"></script>
+    <script src="~/Scripts/tree.init.js"></script>
+
+    <!-- Players -->
+    <link rel="stylesheet" href="~/Content/mediaelementplayer.css">
+    <script src="~/Scripts/mediaelement-and-player.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="top">
+            <div class="header_font">
+                <span id="decrease"><a>A-</a></span>
+                <span id="reset" class="limit_size"><a>A</a></span>
+                <span id="increase"><a>A+</a></span>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div id="header">
+            <div class="logo"><a href="http://nalog.ru/rn86/"><img src="/images/logo.png" alt=""></a></div>
+            <div class="header_left">
+                <span class="site_title"><a href="/">Федеральная<br>Налоговая служба</a></span>
+            </div>
+            <div class="header_search">
+                <div class="header_links"><a class="link1" href="">О ФНС России</a> <a class="link2" href="">Контакты, обращения, адреса</a></div>
+            </div>
+            <div class="clear"></div>
+            <div class="topmenu">
+                <h1>Сервис видеонаблюдения оперзалов инспекций округа в режиме реального времени</h1>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="bread_crumbs"></div>
+
+            <div class="content">
+                @RenderBody()
+             <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footer_frame">
+            <div class="footer_holder">
+
+                <div class="footer_right">
+                    <div class="copy_div">
+                        <div class="copy">&copy; 2005-@DateTime.Now.Year ФНС России</div>
+                        <p>Дата создания страницы 12.01.2012 <br>Дата обновления страницы 04.12.2017</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
