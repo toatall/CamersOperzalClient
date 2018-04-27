@@ -56,6 +56,12 @@ namespace CamersOperzalClient.Controllers
             if (Camera == null)
                 return HttpNotFound();
 
+            // получение настройки (интервала загрузки изображения)
+            Configuration Config = db.TableConfiguration.Find("IntervalTimeout");
+            if (Config == null)
+                return HttpNotFound();
+            ViewBag.IntervalTimeout = Config.ConfigValue;
+
             // запись информации о посещении пользователем страницы (для сбора статистики)
             try
             {

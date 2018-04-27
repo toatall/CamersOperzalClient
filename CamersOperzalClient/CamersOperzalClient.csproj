@@ -127,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\ContextDatabase.cs" />
     <Compile Include="Models\DataClasses.cs">
       <DependentUpon>DataClasses.dbml</DependentUpon>
@@ -849,6 +850,7 @@
     <None Include="Properties\PublishProfiles\CameraOperzal.pubxml" />
     <Content Include="Scripts\functions.js.mine" />
     <Content Include="Scripts\functions.js.r8" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Models\DataClasses.dbml.layout">

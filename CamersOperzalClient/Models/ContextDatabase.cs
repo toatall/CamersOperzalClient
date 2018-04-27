@@ -36,7 +36,13 @@ namespace CamersOperzalClient.Models
         /// с информацией о камерах
         /// </summary>
         /// <returns></returns>
-        public virtual DbSet<General> TableGeneral { get; set; }        
+        public virtual DbSet<General> TableGeneral { get; set; }
+
+        /// <summary>
+        /// Данные из таблицы camers_operzal_configuration
+        /// с информацией о настройках
+        /// </summary>
+        public virtual DbSet<Configuration> TableConfiguration { get; set; }
 
         /// <summary>
         /// Запись информации о посещении пользователем страницы с просмотром изображения с камеры
