@@ -28,7 +28,7 @@ namespace CamersOperzalClient.Controllers
             {
                 IEnumerable<Ifns> TableIfns = db.TableIfns;
                 if (TableIfns.Count() > 0)
-                    return View(TableIfns);
+                    return View(TableIfns.OrderBy(x => x.Order));
             }
             catch (Exception e)
             {
